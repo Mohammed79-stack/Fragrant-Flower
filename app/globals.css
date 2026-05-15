@@ -1,26 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+--background-primary-color:#FCF5ED;
+--text-primary:#3d3d3d;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: Rhigen;
+  src: url('@/Fonts/Flower vibes Regular.otf');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme inline{
+
+--color-primary:var(--background-primary-color);
+--color-fragnent:var(--text-primary);
+--font-fragnent:Rhigen, 'sans-seirf';
+
+
 }
+
+
+
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+  background-color: var(--background-primary-color);
+
+  
 }
