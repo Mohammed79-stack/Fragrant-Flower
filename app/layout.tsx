@@ -1,4 +1,6 @@
+import LeafsEffect from "@/Components/LeafsEffect";
 import "./globals.css";
+import Header from "@/Components/Header";
 
 
 export default function RootLayout({
@@ -11,10 +13,10 @@ export default function RootLayout({
       lang="en"
       dir="ltr"
     >
-      <body className="min-h-full">
-        
-        
-        
+      <body>
+      
+      <LeafsEffect />
+      <Header />
         {children}
         
         
