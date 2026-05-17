@@ -14,12 +14,10 @@ export default function RootLayout({
       dir="ltr"
     >
       <body>
-      
+      <div className="noise"></div>
       <LeafsEffect />
       <Header />
         {children}
-        
-        
         </body>
     </html>
   );

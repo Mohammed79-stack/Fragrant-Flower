@@ -1,8 +1,14 @@
+import Hero from "@/Components/Hero"
 
 
 const page = () => {
   return (
-    <div className=""></div>
+    <div className="">
+
+    <Hero />
+
+
+    </div>
   )
 }
 
