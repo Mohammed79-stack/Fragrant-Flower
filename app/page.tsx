@@ -6,7 +6,9 @@ const page = () => {
     <div className="">
 
     <Hero />
+    <div className="h-screen relative">
 
+    </div>
 
     </div>
   )
