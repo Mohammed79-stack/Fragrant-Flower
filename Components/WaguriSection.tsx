@@ -4,12 +4,14 @@ import Image from "next/image"
 import waguri from "@/Media/Kaoru.png"
 import { useMotionValue, useTransform, motion } from "motion/react"
 import Char from "./Ui/Char"
+import ScrollArrow from "./Ui/ScrollArrow"
+import { useEffect, useState } from "react"
 
 const WaguriSection = () => {
 
     const xMotion = useMotionValue(0)
     const yMotion = useMotionValue(0)
-
+    const [show, setShow] = useState(true);
     const moveMouse = (e:React.MouseEvent<HTMLDivElement>)=> {
 
         const currentElement = e.currentTarget.getBoundingClientRect()
@@ -42,9 +44,30 @@ const WaguriSection = () => {
 
     }
 
+
+useEffect(() => {
+  const sub = (e: Event) => {
+
+    if(window.scrollY > 0) {
+      setShow(false)
+      window.removeEventListener('scroll', sub)
+    }
+
+
+
+  }
+
+  window.addEventListener('scroll', sub)
+
+  return () => {
+    window.removeEventListener('scroll', sub)
+  }
+}, [])
+
+
   return (
     <div className="h-screen relative flex items-end justify-center" onMouseMove={moveMouse} onMouseLeave={mouseLeave}>
-    
+    <ScrollArrow scrollVisible={show}/>
     {/* title */}
     <motion.div
     style={{perspective:'1200px', rotateX, rotateY}}

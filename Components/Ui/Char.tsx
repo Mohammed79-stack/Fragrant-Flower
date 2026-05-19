@@ -1,4 +1,3 @@
-import Image from "next/image"
 import {motion} from 'framer-motion'
 const Char = ({img, flip = false, x, y}:{img:string, flip:boolean, x:number, y:number}) => {
   return (
