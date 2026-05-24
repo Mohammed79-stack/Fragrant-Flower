@@ -5,6 +5,8 @@
 --background-primary-color:#f8faff;
 --text-primary:#222222;
 
+
+
 }
 
 @font-face {
@@ -17,7 +19,7 @@
 --color-primary:var(--background-primary-color);
 --color-fragnent:var(--text-primary);
 --font-fragnent:Rhigen, 'sans-seirf';
-
+--shadow-fragnent-box: 0 0px 20px #000;
 
 }
 
@@ -25,7 +27,8 @@
 
 .flower-textshadow{
 
-text-shadow:0px 0px 10px var(--text-primary);
+@apply text-shadow-[0_0_10px]
+
 
 }
 
@@ -67,9 +70,6 @@ pointer-events: none;
 }
 
 
-
-
-
 }
 
 
@@ -89,7 +89,6 @@ body {
 
 
 @layer components {
-
 
     .noise {
       position: fixed;
