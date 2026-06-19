@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -14,11 +15,13 @@
   src: url('@/Fonts/Flower vibes Regular.otf');
 }
 
+
 @theme inline{
 
 --color-primary:var(--background-primary-color);
 --color-fragnent:var(--text-primary);
 --font-fragnent:Rhigen, 'sans-seirf';
+--font-secondory: "Iosevka Charon", monospace;
 --shadow-fragnent-box: 0 0px 20px #000;
 
 }
@@ -35,7 +38,8 @@
 
 .flower-dropshadow {
 
-filter: drop-shadow(0px 0px 6px #3a596b9d);
+
+filter: drop-shadow(0px 0px 5px #22455a86);
 
 }
 
@@ -89,6 +93,12 @@ body {
 
 
 @layer components {
+.galaxy-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+}
 
     .noise {
       position: fixed;

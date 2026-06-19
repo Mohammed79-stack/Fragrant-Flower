@@ -5,7 +5,7 @@ const Labeling = ({label}:{label:string}) => {
 
 
   return (
-    <div className='absolute w-full h-full top-0'>
+    <div className='absolute w-full h-full top-0 pointer-events-none z-2'>
     <motion.div 
     initial={{x:'100%', filter:'blur(4px)'}}
     whileInView={{x: 0,filter:'blur(0px)'}}
