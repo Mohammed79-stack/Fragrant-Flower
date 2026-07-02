@@ -3,6 +3,7 @@ import Hero from "@/Components/Hero"
 import Memories from "@/Components/Memories"
 import Relatioship from "@/Components/Relatioship"
 import RinKun from "@/Components/RinKun"
+import Timeline from "@/Components/Timeline"
 
 
 const page = () => {
@@ -14,6 +15,8 @@ const page = () => {
     <Memories />
     <Relatioship />
     <RinKun />
+    <Timeline />
+    
     </div>
   )
 }

@@ -4,7 +4,7 @@ import ScenesController from './Wrappers/ScenesController'
 import {scenes} from '@/Data/ScenesData'
 import Scene from './Ui/Scene'
 import Galaxy from './Ui/Galaxy';
-import { AnimatePresence } from 'motion/react'
+
 const RinKun = () => {
 
   const scenesInfo = scenes.map((el, index) => <Scene reverse={(index + 1) % 2 == 0 ? true : false} sceneData={el} key={el.phrase}/>)
@@ -35,6 +35,7 @@ const RinKun = () => {
 
   return (
     <div ref={sectionRef} className='h-[120vh] overflow-hidden relative bg-linear-to-br from-[#03060a] to-[#1f123f]'>
+            <div className='h-[4vh] w-full absolute bg-linear-to-b to-primary from-transparent z-20 bottom-0' />
       <div className='absolute top-0 from-20% w-full h-[15vh] z-1 bg-linear-to-b from-[#f8faff] via-[#7b3da554] to-transparent'></div>
         <Labeling label="Rin-Kun"/>
 <div className='overflow-hidden'>

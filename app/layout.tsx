@@ -1,6 +1,7 @@
 import LeafsEffect from "@/Components/LeafsEffect";
 import "./globals.css";
 import Header from "@/Components/Header";
+import Footer from "@/Components/Footer";
 
 
 export default function RootLayout({
@@ -16,8 +17,9 @@ export default function RootLayout({
       <body>
       <div className="noise"></div>
       <LeafsEffect />
-      <Header />
+      {/* <Header /> */}
         {children}
+        <Footer />
         </body>
     </html>
   );

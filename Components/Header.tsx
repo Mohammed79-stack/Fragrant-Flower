@@ -4,7 +4,7 @@ import LinksList from "./Wrappers/LinksList"
 
 const Header = () => {
   return (
-    <div className="fixed w-full top-0 z-40">
+    <div className="fixed w-full top-0 z-40 bg-[#ffffff25] backdrop-blur-[10px]">
       <Container>
         <div className="py-10 flex flex-between items-center relative">
 
@@ -12,9 +12,9 @@ const Header = () => {
         <LinksList dataLink={['Waguri','Memories','Relationships']}/>
 
           <div className="absolute left-1/2 -translate-x-1/2 flower-dropshadow">
-          <Image src='/logo.png' className="flower-dropshadow" width={180} height={180} alt=""/>
+          <Image src='/logo.png' className="flower-dropshadow" width={150} height={150} alt=""/>
           </div>
-
+          
 
         <LinksList dataLink={['Rin-kun']}/>
 

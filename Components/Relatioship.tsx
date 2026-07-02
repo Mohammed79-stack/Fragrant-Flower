@@ -19,10 +19,12 @@ const Relatioship = () => {
     <div className='h-full flex flex-center'>
     <Container>
     <AnimatePresence mode='wait'>
+
     <RelationProvider>
     <SelectiveMenu />
     <RelationSection />
     </RelationProvider>
+    
     </AnimatePresence>
     </Container>
 
