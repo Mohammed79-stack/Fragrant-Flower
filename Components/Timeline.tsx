@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 const Timeline = () => {
 
-    const [activeIndex, setActiveIndex] = useState()
+    const [activeIndex, setActiveIndex] = useState<number>()
     console.log(activeIndex)
 
   return (
