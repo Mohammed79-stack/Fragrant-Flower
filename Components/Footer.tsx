@@ -1,8 +1,8 @@
 
 import Image from "next/image"
 import Container from "./Wrappers/Container"
-import { SiAmericanairlines, SiSouthwestairlines } from "react-icons/si";
-import { SiLine } from "react-icons/si"
+import {  SiSouthwestairlines } from "react-icons/si";
+
 
 
 const Footer = () => {
