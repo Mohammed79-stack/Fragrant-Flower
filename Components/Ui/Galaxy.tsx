@@ -1,6 +1,6 @@
 import { Renderer, Program, Mesh, Color, Triangle } from 'ogl';
 import { useEffect, useRef } from 'react';
-
+import type { HTMLAttributes } from 'react';
 
 const vertexShader = `
 attribute vec2 uv;
@@ -170,6 +170,25 @@ void main() {
 }
 `;
 
+interface GalaxyProps extends HTMLAttributes<HTMLDivElement> {
+  focal?: [number, number];
+  rotation?: [number, number];
+  starSpeed?: number;
+  density?: number;
+  hueShift?: number;
+  disableAnimation?: boolean;
+  speed?: number;
+  mouseInteraction?: boolean;
+  glowIntensity?: number;
+  saturation?: number;
+  mouseRepulsion?: boolean;
+  repulsionStrength?: number;
+  twinkleIntensity?: number;
+  rotationSpeed?: number;
+  autoCenterRepulsion?: number;
+  transparent?: boolean;
+}
+
 export default function Galaxy({
   focal = [0.5, 0.5],
   rotation = [1.0, 0.0],
@@ -188,8 +207,8 @@ export default function Galaxy({
   autoCenterRepulsion = 0,
   transparent = true,
   ...rest
-}) {
-  const ctnDom = useRef(null);
+}: GalaxyProps) {
+  const ctnDom = useRef<HTMLDivElement>(null);
   const targetMousePos = useRef({ x: 0.5, y: 0.5 });
   const smoothMousePos = useRef({ x: 0.5, y: 0.5 });
   const targetMouseActive = useRef(0.0);
@@ -212,7 +231,7 @@ export default function Galaxy({
       gl.clearColor(0, 0, 0, 1);
     }
 
-    let program;
+    let program: Program | undefined;
 
     function resize() {
       const scale = 1;
@@ -229,7 +248,7 @@ export default function Galaxy({
     resize();
 
     const geometry = new Triangle(gl);
-    program = new Program(gl, {
+    const prog = new Program(gl, {
       vertex: vertexShader,
       fragment: fragmentShader,
       uniforms: {
@@ -257,15 +276,16 @@ export default function Galaxy({
         uTransparent: { value: transparent }
       }
     });
+    program = prog;
 
-    const mesh = new Mesh(gl, { geometry, program });
-    let animateId;
+    const mesh = new Mesh(gl, { geometry, program: prog });
+    let animateId: number;
 
-    function update(t) {
+    function update(t: number) {
       animateId = requestAnimationFrame(update);
       if (!disableAnimation) {
-        program.uniforms.uTime.value = t * 0.001;
-        program.uniforms.uStarSpeed.value = (t * 0.001 * starSpeed) / 10.0;
+        prog.uniforms.uTime.value = t * 0.001;
+        prog.uniforms.uStarSpeed.value = (t * 0.001 * starSpeed) / 10.0;
       }
 
       const lerpFactor = 0.05;
@@ -274,16 +294,16 @@ export default function Galaxy({
 
       smoothMouseActive.current += (targetMouseActive.current - smoothMouseActive.current) * lerpFactor;
 
-      program.uniforms.uMouse.value[0] = smoothMousePos.current.x;
-      program.uniforms.uMouse.value[1] = smoothMousePos.current.y;
-      program.uniforms.uMouseActiveFactor.value = smoothMouseActive.current;
+      prog.uniforms.uMouse.value[0] = smoothMousePos.current.x;
+      prog.uniforms.uMouse.value[1] = smoothMousePos.current.y;
+      prog.uniforms.uMouseActiveFactor.value = smoothMouseActive.current;
 
       renderer.render({ scene: mesh });
     }
     animateId = requestAnimationFrame(update);
     ctn.appendChild(gl.canvas);
 
-    function handleMouseMove(e) {
+    function handleMouseMove(e: MouseEvent) {
       const rect = ctn.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
       const y = 1.0 - (e.clientY - rect.top) / rect.height;
