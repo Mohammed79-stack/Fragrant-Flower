@@ -1,6 +1,6 @@
-![Preview](https://media1.tenor.com/m/urChzCzOV3QAAAAd/kaoru-hana-wa-rin-to-saku-the-fragrant-flower.gif)
 
 <div align="center">
+![Preview](https://media1.tenor.com/m/urChzCzOV3QAAAAd/kaoru-hana-wa-rin-to-saku-the-fragrant-flower.gif)
 
 # 🌸 Fragrant Flower
 
