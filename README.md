@@ -1,3 +1,5 @@
+![Preview](https://media1.tenor.com/m/urChzCzOV3QAAAAd/kaoru-hana-wa-rin-to-saku-the-fragrant-flower.gif)
+
 <div align="center">
 
 # 🌸 Fragrant Flower
@@ -6,7 +8,7 @@
 
 ![Preview](./public/preview.gif)
 
-[🌐 Live Demo](YOUR_LIVE_LINK_HERE) · [🐛 Report a Bug](https://github.com/Mohammed79-stack/fragnentflower/issues) · [⭐ Star this repo](https://github.com/Mohammed79-stack/fragnentflower)
+[🌐 Live Demo](https://ff-weld-ten.vercel.app) · [🐛 Report a Bug](https://github.com/Mohammed79-stack/fragnentflower/issues) · [⭐ Star this repo](https://github.com/Mohammed79-stack/fragnentflower)
 
 </div>
 
