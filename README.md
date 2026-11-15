@@ -1,5 +1,4 @@
 
-![header](https://capsule-render.vercel.app/api?type=waving&color=ffb7c5&height=200&section=header&text=Fragrant%20Flower&fontSize=48&fontColor=ffffff)
 <div align="center">
 <img alt="waguri" src="https://media1.tenor.com/m/urChzCzOV3QAAAAd/kaoru-hana-wa-rin-to-saku-the-fragrant-flower.gif" />
 # 🌸 Fragrant Flower
