@@ -33,7 +33,6 @@
 - ⚙️ Modern Look
 - 😍 Match any fan's feelings
 
-*(Edit this list to match what your site really does.)*
 
 ## 🛠️ Built With
 
