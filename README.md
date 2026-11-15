@@ -1,7 +1,7 @@
 
 <div align="center">
 <img alt="waguri" src="https://media1.tenor.com/m/urChzCzOV3QAAAAd/kaoru-hana-wa-rin-to-saku-the-fragrant-flower.gif" />
-# 🌸 Fragrant Flower
+## 🌸 Fragrant Flower
 
 **A Waguri fan website built with Next.js**
 
