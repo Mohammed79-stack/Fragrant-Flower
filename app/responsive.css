@@ -1,0 +1,433 @@
+/*
+  responsive.css
+  ------------------------------------------------------------------
+  Adds responsiveness to Fragrant Flower WITHOUT touching any
+  existing component or globals.css code.
+
+  How it works:
+  - Everything lives inside max-width media queries, so desktop
+    (>= 1024px) renders exactly as before.
+  - These rules are un-layered, so they win over Tailwind's
+    @layer utilities without needing to edit any component.
+  - Rules target the classes already used in your components.
+    A few use !important only to beat inline `style={{...}}` values.
+
+  Breakpoints:  <= 1279px laptop-small   <= 1023px tablet   <= 767px phone
+*/
+
+
+/* ================================================================
+   LAPTOP-SMALL  (<= 1279px)
+   ================================================================ */
+@media (max-width: 1279px) {
+
+  /* Timeline: the round initial badge sits half outside the left edge of
+     the container. When the container is full-width it gets clipped, so
+     push the container in a little. */
+  .container.relative {
+    margin-left: 2.5rem;
+    margin-right: 0;
+    width: calc(100% - 2.5rem);
+  }
+}
+
+
+/* ================================================================
+   TABLET & BELOW  (<= 1023px)
+   ================================================================ */
+@media (max-width: 1023px) {
+
+  /* Safety net: never allow sideways scrolling */
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  /* ---------- Hero / Waguri ---------- */
+  .max-w-\[50\%\].pb-35 {
+    max-width: 100%;
+    padding-bottom: 6rem;
+  }
+
+  .text-\[15rem\] {
+    font-size: clamp(4.5rem, 18vw, 11rem);
+  }
+
+  h1.text-7xl {
+    font-size: 4.5rem;
+  }
+
+  h2.text-6xl {
+    font-size: 3.5rem;
+  }
+
+  .z-6.flex-col {
+    width: 100%;
+    padding-inline: 1.5rem;
+  }
+
+  .font-serif {
+    max-width: 40rem;
+  }
+
+  .font-serif > p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* floating character call-outs: shrink instead of overflowing */
+  .hue-rotate-330 > .flex.absolute {
+    scale: 0.7;
+  }
+
+  /* ---------- Section labels (Album / Relationship / Rin-Kun) ---------- */
+  .sticky.w-40 {
+    width: 8rem;
+    top: 6rem;
+  }
+
+  /* ---------- Album ---------- */
+  .max-w-\[75\%\].h-160 {
+    max-width: 92%;
+  }
+
+  h1.text-8xl {
+    font-size: 4rem;
+  }
+
+  .w-\[50\%\].flex.items-center {
+    padding-inline: 1.5rem;
+  }
+
+  /* ---------- Relationship ---------- */
+  .gap-10.my-4 {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .flex.flex-center > .container {
+    padding-inline: 1rem;
+  }
+
+  /* stack: portrait -> info card -> mirror photos */
+  .h-full.py-20.px-8.flex.justify-center.gap-2 {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-block: 3rem;
+    padding-inline: 1rem;
+  }
+
+  .w-\[20\%\].flex {
+    width: 60%;
+    max-width: 15rem;
+  }
+
+  .w-\[20\%\] img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .w-\[50\%\].flex.gap-18 {
+    width: 100%;
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+
+  .w-\[50\%\].flex.gap-18 > .flex.flex-col.gap-8 {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .bg-\[\#fafafa\] {
+    flex-wrap: wrap;
+  }
+
+  /* ---------- Rin-Kun scenes ---------- */
+  .gap-80,
+  .gap-80.flex-row-reverse {
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+  }
+
+  .w-\[800px\].h-\[800px\] {
+    width: min(88vw, 560px);
+    height: min(88vw, 560px);
+  }
+
+  .max-w-110 {
+    max-width: 90%;
+  }
+
+  h1.text-\[3vw\] {
+    font-size: clamp(1.25rem, 5vw, 2.25rem);
+  }
+
+  /* ---------- Footer ---------- */
+  .py-10 .container {
+    padding-inline: 1.25rem;
+  }
+
+  .py-10 .container > .flex.justify-between.items-center {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .max-w-\[60\%\] {
+    max-width: 100%;
+  }
+
+  .text-center.text-\[\#7e5ec9\] {
+    padding-inline: 1rem;
+  }
+}
+
+
+/* ================================================================
+   PHONE  (<= 767px)
+   ================================================================ */
+@media (max-width: 767px) {
+
+  /* ---------- Hero / Waguri ---------- */
+  .h-screen {
+    height: 100svh;
+  }
+
+  .text-\[15rem\] {
+    font-size: clamp(4rem, 22vw, 7rem);
+  }
+
+  h1.text-7xl {
+    font-size: 2.75rem;
+  }
+
+  h2.text-6xl {
+    font-size: 2.25rem;
+  }
+
+  .max-w-\[50\%\].pb-35 {
+    padding-bottom: 4rem;
+  }
+
+  .z-6.flex-col {
+    padding-inline: 1rem;
+  }
+
+  .font-serif > p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .hue-rotate-330 > img {
+    width: min(520px, 80vw);
+    height: auto;
+  }
+
+  /* decorative call-outs don't fit on a phone */
+  .hue-rotate-330 > .flex.absolute {
+    display: none;
+  }
+
+  /* ---------- Section labels ---------- */
+  .sticky.w-40 {
+    width: 5.5rem;
+    padding: 0.4rem;
+    top: 1rem;
+    margin-block: 0.5rem;
+  }
+
+  .sticky.w-40 > h2 {
+    font-size: 0.85rem;
+  }
+
+  /* ---------- Album ---------- */
+  .h-\[100vh\] {
+    height: auto;
+    min-height: 100svh;
+    padding-block: 3rem;
+  }
+
+  .max-w-\[75\%\].h-160 {
+    max-width: 94%;
+    height: auto;
+  }
+
+  .h-160.p-4 {
+    padding-bottom: 4.5rem;
+  }
+
+  /* cover pages need an explicit height now that the card is auto-height */
+  .h-160 > .text-white.relative.flex.h-full.w-full {
+    height: 30rem;
+  }
+
+  .h-160 > .text-4xl.h-full {
+    height: 22rem;
+  }
+
+  .text-lg.top-0.px-10 {
+    padding-inline: 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .w-25.h-42 {
+    width: 4.5rem;
+    height: 7.5rem;
+    left: 0.75rem;
+  }
+
+  /* album page: text on top, photos below */
+  .h-160 > .flex.h-full.w-full:not(.text-white) {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .h-160 > .flex.h-full.w-full:not(.text-white) > div:first-child {
+    width: 100%;
+    padding-inline: 0.5rem;
+    padding-bottom: 1rem;
+  }
+
+  h1.text-8xl {
+    font-size: 2.5rem;
+  }
+
+  .border-2.text-2xl {
+    font-size: 1.1rem;
+  }
+
+  .w-\[60\%\] {
+    width: 100%;
+    height: 26rem;
+  }
+
+  /* re-place the draggable polaroids inside the narrower box
+     (!important is needed to beat their inline styles) */
+  .w-\[60\%\] > .w-full.h-full.relative > .absolute:nth-child(1) {
+    width: 60% !important;
+    height: 150px !important;
+    top: 200px !important;
+    left: 2% !important;
+    right: auto !important;
+  }
+
+  .w-\[60\%\] > .w-full.h-full.relative > .absolute:nth-child(2) {
+    width: 46% !important;
+    height: 190px !important;
+    top: 190px !important;
+    right: 0 !important;
+    left: auto !important;
+  }
+
+  .w-\[60\%\] > .w-full.h-full.relative > .absolute:nth-child(3) {
+    width: 62% !important;
+    height: 190px !important;
+    top: 5px !important;
+    left: 20% !important;
+  }
+
+  .w-\[60\%\] > .w-full.h-full.relative > .absolute:nth-child(4) {
+    width: 40% !important;
+    height: 100px !important;
+  }
+
+  /* ---------- Relationship ---------- */
+  .gap-10.my-4 {
+    gap: 0.75rem;
+  }
+
+  .size-\[100px\] {
+    width: 64px;
+    height: 64px;
+  }
+
+  .h-full.pt-30 {
+    padding-top: 4.5rem;
+  }
+
+  .size-40 {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .bg-\[\#fafafa\] .size-50 {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  /* ---------- Rin-Kun ---------- */
+  .w-\[800px\].h-\[800px\] {
+    width: min(88vw, 420px);
+    height: min(88vw, 420px);
+  }
+
+  /* ---------- Timeline ---------- */
+  .sticky.h-screen {
+    height: 100svh;
+  }
+
+  .container.relative {
+    margin-left: 2rem;
+    width: calc(100% - 2rem - 0.75rem);
+  }
+
+  .sticky .pt-30.h-full {
+    padding-top: 5.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .size-20.rounded-full.absolute {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.25rem;
+    top: 4.5rem;
+  }
+
+  .gap-14.h-full.items-center {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .w-\[50\%\].h-full.overflow-hidden {
+    width: 100%;
+    height: 26%;
+    flex-shrink: 0;
+  }
+
+  .w-\[50\%\].h-full.overflow-hidden > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .w-\[50\%\].py-10 {
+    width: 100%;
+    padding-block: 0;
+  }
+
+  .text-2xl.mb-2.bg-black.text-white.p-4 {
+    font-size: 1.05rem;
+    padding: 0.75rem;
+  }
+
+  .text-xl.p-4.font-thin {
+    font-size: 0.82rem;
+    line-height: 1.45;
+    padding: 0.75rem;
+  }
+
+  .-z-1.bg-white > img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* ---------- Footer ---------- */
+  .py-10 .container .flex.gap-8 {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}

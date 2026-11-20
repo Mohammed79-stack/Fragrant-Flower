@@ -2,7 +2,7 @@ import LeafsEffect from "@/Components/LeafsEffect";
 import "./globals.css";
 import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";
-
+import "./responsive.css";
 
 export default function RootLayout({
   children,
